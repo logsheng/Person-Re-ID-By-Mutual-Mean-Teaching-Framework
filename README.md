@@ -20,29 +20,29 @@
 4. 但是多了在线软伪标签，由网络捕捉到的数据分布和预测得出
 在线软伪标签由来自对方网络的平均模型，而不是当前的对方网络（导致网络收敛至相似以及误差被放大）
 
-data
-├── dukemtmc
+data  
+├── dukemtmc  
 ├── market1501
 
-code
-├── pre_training (stage1)
-    └── resnet.py 文中有两个backbone:resnet和ibn_resnet，他们在stage2都要被初始化
-    └── ibn_resnet.py
-    └── clustering.py 
-    └── train.py
+code  
+├── pre_training (stage1)  
+&emsp;&emsp; └── resnet.py 文中有两个backbone:resnet和ibn_resnet，他们在stage2都要被初始化  
+&emsp;&emsp; └── ibn_resnet.py  
+&emsp;&emsp; └── clustering.py  
+&emsp;&emsp; └── train.py  
     
-├── training_with_mmt (stage2) 这我还没想好怎么分
-    └── mmt.py
-    └── train.py
+├── training_with_mmt (stage2) 这我还没想好怎么分  
+&emsp;&emsp; └── mmt.py  
+&emsp;&emsp; └── train.py  
     
-├── datasets
-    └── dukemtmc.py 怎么下载要不要写...应该要写到能够直接返回data和target，大概率继承Dataset实现里面的方法，预处理可以写成个方法如果有的话
-    └── market.py
+├── datasets  
+&emsp;&emsp; └── dukemtmc.py 怎么下载要不要写...应该要写到能够直接返回data和target，大概率继承Dataset实现里面的方法，预处理可以写成个方法如果有的话  
+&emsp;&emsp; └── market.py  
     
-├── utils
-    └── loss.py
-        def cross_entropy()
-        def triplet()
-    └── metrics.py
-        def mean_average_precision()
-        def cmc
+├── utils  
+&emsp;&emsp; └── loss.py  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; def cross_entropy()  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; def triplet()  
+&emsp;&emsp; └── metrics.py  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; def mean_average_precision()  
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; def cmc()  
