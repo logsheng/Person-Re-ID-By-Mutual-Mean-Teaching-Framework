@@ -130,7 +130,7 @@ def main_worker(args):
         cf = torch.stack(list(dict_f.values())).numpy()
 
         print('\n Clustering into {} classes \n'.format(args.num_clusters))
-        km = KMeans(n_clusters=args.num_clusters, random_state=args.seed, n_jobs=2).fit(cf)
+        km = KMeans(n_clusters=args.num_clusters, random_state=args.seed).fit(cf)
 
         model.module.classifier.weight.data.copy_(torch.from_numpy(normalize(km.cluster_centers_, axis=1)).float().cuda())
 
