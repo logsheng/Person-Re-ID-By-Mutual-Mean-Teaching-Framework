@@ -23,12 +23,12 @@ MMT/examples/data
 
 ### Generate Smaller Datasets
 ```shell
-python split.py
+python scripts/split_data.py
 ```
 
 
 ## Experiments
-### Duke-to-Market (ResNet-50)
+### e.g., Duke-to-Market (ResNet-50)
 #### 1. Pre-trained
 ```shell
 sh scripts/pretrain.sh dukemtmc market1501 resnet50 1
@@ -38,10 +38,10 @@ sh scripts/pretrain.sh dukemtmc market1501 resnet50 2
 ```shell
 sh scripts/train_baseline_kmeans.sh dukemtmc market1501 resnet50 500
 ```
-
-
-
-
+#### 3. MMT
+```shell
+sh scripts/train_mmt_kmeans.sh dukemtmc market1501 resnet50 500
+```
 
 
 ## Reference
